@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Cateogry</title>
+    <link rel="stylesheet" href="lib/layui-v2.6.3/css/layui.css">
+
+    <!-- css include -->
+    <link rel="stylesheet" type="text/css" href="css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+
+    <!-- my css include -->
+    <link rel="stylesheet" type="text/css" href="css/custom-menu.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" href="css/extra.css">
+
+</head>
+
+
+<body>
+
+
+<div class="thetop"></div>
+<!-- for back to top -->
+
+<div class='backToTop'>
+    <a href="#" class='scroll'>
+        <span>T</span>
+        <span>O</span>
+        <span>P</span>
+        <span class="go-up">
+					<i class="icofont icofont-long-arrow-up"></i>
+				</span>
+    </a>
+</div>
+<!-- backToTop -->
+
+
+<!-- ==================== header-section Start ==================== -->
+<header id="header-section" class="header-section w100dt navbar-fixed">
+
+    <nav class="nav-extended main-nav">
+        <div class="container">
+            <div class="row">
+                <div class="nav-wrapper w100dt">
+
+                    <div class="logo left">
+                        <a href="index.html" class="brand-logo">
+                            <img src="img/kir.png"  alt="brand-logo">
+                        </a>
+                    </div>
+                    <!-- logo -->
+
+                    <div>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse">
+                            <i class="icofont icofont-navigation-menu"></i>
+                        </a>
+                        <ul id="nav-mobile" class="main-menu center-align hide-on-med-and-down">
+                            <li class="active"><a href="index.html">HOME</a></li>
+                            <li><a href="cateogry.html">CATEGORIES</a></li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li class="dropdown userSwitch">
+                                <a href="login.html" id="user">~请登录~</a>
+                                <ul class="dropdown-container">
+                                    <li><a href="swithUser">切换用户</a></li>
+                                    <li><a href="/logout">退出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- /.main-menu -->
+
+                        <!-- ******************** sidebar-menu ******************** -->
+                        <ul class="side-nav" id="mobile-demo">
+                            <li class="snavlogo center-align"><img src="img/kir.png" alt="logo"></li>
+                            <li class="active"><a href="index.html">HOME</a></li>
+                            <li><a href="cateogry.html">CATEGORIES</a></li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li><a href="single-blog.html.html" style="display: none" id="person">我的主页</a></li>
+
+                        </ul>
+                    </div>
+                    <!-- main-menu -->
+
+                    <a href="#" class="search-trigger right">
+                        <i class="icofont icofont-search" style="font-size: 18px;"></i>
+                    </a>
+                    <a href="writeblog.html" class="writeBlog right" title="写博客">
+                        <i class="layui-icon layui-icon-add-circle" style="font-size: 30px; color: #000000;"></i>
+                    </a>
+                    <!-- search -->
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn">&times;</a>
+                        <div class="overlay-content">
+                            <form action="search.html" method="get">
+                                <input type="text" name="key" placeholder="Search...">
+                                <br>
+                                <button class="waves-effect waves-light" type="submit" >Search</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.nav-wrapper -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </nav>
+
+</header>
+<!-- /#header-section -->
+<!-- ==================== header-section End ==================== -->
+
+
+<!-- ==================== header-section Start ==================== -->
+<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
+    <div class="container">
+
+        <nav class="breadcrumb-nav w100dt">
+            <div class="page-name hide-on-small-only left" style="width: 80%;color: black">
+                <h4 class="count">个人主页</h4>
+
+
+            </div>
+            <div class="nav-wrapper right">
+                <a href="#!" class="breadcrumb">Home</a>
+                <a href="#!" class="breadcrumb active">Search</a>
+            </div>
+            <!-- /.nav-wrapper -->
+        </nav>
+        <!-- /.breadcrumb-nav -->
+
+    </div>
+    <!-- container -->
+</section>
+<!-- /.breadcrumb-section -->
+<!-- ==================== header-section End ==================== -->
+
+
+<!-- ==================== cateogry-section start ==================== -->
+<section id="cateogry-section" class="cateogry-section w100dt mb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 l8">
+                <div class="col m12 s12 user-info ">
+                    <div class="blogs mb-30" style="background-color: white">
+                        <div class="card">
+
+                            <div class="card-image col m3 s6 offset-s3" id="info">
+
+                            </div>
+                            <!-- /.card-image -->
+                            <div class="card-content  col m8 s12">
+                                <div class="col m12 s12">
+                                    <div class="area col m12 s12 ">
+                                        <ul style="margin-top: 20px">
+                                            <li class="area col m4 s4 article"></li>
+                                            <li class="area col m4 s4 collect"></li>
+                                            <li class="area col m4 s4 follow"></li>
+                                            <li id="Class" class="article" style="display: none"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col m12 s12" style="margin-top: 20px;margin-left: 20px">
+                                    <input type="text" name="key" placeholder="search" id="search-box" style=" width: 70%;">
+                                    <button id="search" class="layui-btn layui-btn-normal layui-btn-sm"
+                                            style="height: 45px; position: relative;bottom: 2px;right: 44px">
+                                        <i class=" layui-icon layui-icon-search" style="color: white;"></i>
+                                    </button>
+                                </div>
+                                <div style="display: none" class="col m12 s12  area" style="margin-top: 10px">
+                                    <ul>
+                                        <li class="col m2 s2" style="margin-right: 10px">排序</li>
+                                        <li class="a-order col m3 s3" id="date">最近发布</li>
+                                        <li class="a-order col m3 s3" id="good">最多点赞</li>
+                                        <li class="a-order col m3 s3" id="view">最多观看</li>
+                                        <li style="display: none" class="u-order col m3 s3" id="follow">粉丝最多</li>
+                                        <li style="display: none" class="u-order col m3 s3" id="article">博文最多</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <!-- /.card-content -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.blogs -->
+                </div>
+                <div style="display: block	" class="row" id="list">
+
+
+                </div>
+                <!-- row -->
+                <!--						分页-->
+                <div id="pagination"></div>
+
+            </div>
+            <!-- colm8 -->
+
+
+            <!--侧边栏-->
+            <div style="display: none" class="col s12 m4 l4">
+
+                <div style="display: none" class="sidebar-testimonial mb-30">
+                    <div class="sidebar-title center-align">
+                        <h2>Hi Its Me!</h2>
+                    </div>
+                    <!-- /.sidebar-title -->
+
+                    <div class="carousel carousel-slider center" data-indicators="true">
+                        <div class="carousel-item">
+                            <div class="item-img">
+                                <span>R</span>
+                            </div>
+                            <h2>Rakibul Hassan</h2>
+                            <small>Web Design & Development</small>
+                            <p>
+                                Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="item-img">
+                                <span>O</span>
+                            </div>
+                            <h2>Rakibul Hassan</h2>
+                            <small>Web Design & Development</small>
+                            <p>
+                                Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="item-img">
+                                <span>K</span>
+                            </div>
+                            <h2>Rakibul Hassan</h2>
+                            <small>Web Design & Development</small>
+                            <p>
+                                Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="item-img">
+                                <span>I</span>
+                            </div>
+                            <h2>Rakibul Hassan</h2>
+                            <small>Web Design & Development</small>
+                            <p>
+                                Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="item-img">
+                                <span>B</span>
+                            </div>
+                            <h2>Rakibul Hassan</h2>
+                            <small>Web Design & Development</small>
+                            <p>
+                                Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.sidebar-testimonial -->
+
+                <div style="display: block" class="sidebar-box bg-box sidebar-tags">
+                    <h6 class="sidebar-title">Keyword</h6>
+                    <ul class="clearfix">
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Fashion</a></li>
+                        <li><a href="#">Graphic</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Personal</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Travel</a></li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-tags -->
+                <div style="display: none" class="sidebar-box bg-box sidebar-categories">
+                    <h6 class="sidebar-title">Categories</h6>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Fashion</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">News and Events</a></li>
+                        <li><a href="#">Personal</a></li>
+                        <li><a href="#">Branding Agency</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Travel</a></li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-categories -->
+
+
+                <div class="featured-posts w100dt mb-30">
+                    <div class="sidebar-title center-align">
+                        <h2>Featured Posts</h2>
+                    </div>
+                    <!-- /.sidebar-title -->
+
+                    <div class="sidebar-posts" id="feature">
+
+                    </div>
+                    <!-- /.sidebar-posts -->
+
+                </div>
+                <!-- /.featured-posts -->
+
+
+                <div class="top-post w100dt mb-30">
+                    <div class="sidebar-title center-align">
+                        <h2>Top Posts</h2>
+                    </div>
+                    <!-- /.sidebar-title -->
+
+                    <ul id="tabs-swipe-demo" class="top-post-tab tabs tabs-fixed-width">
+                        <li class="tab"><a href="#test-swipe-1" class="active">Most Views</a></li>
+                        <li class="tab"><a href="#test-swipe-2">Recent</a></li>
+                        <li class="tab"><a href="#test-swipe-3">Comments</a></li>
+                    </ul>
+
+                    <div id="test-swipe-1" class="tab-contant most-view">
+
+                        <div class="sidebar-posts">
+                            <div class="card">
+                                <div class="card-image mb-10">
+                                    <img src="img/fashion.jpg" alt="Image">
+                                    <span class="effect"></span>
+                                </div>
+                                <!-- /.card-image -->
+                                <div class="card-content w100dt">
+                                    <p>
+                                        <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                    </p>
+                                    <a href="single-blog.html" class="card-title">
+                                        Lorem Ipsum Dolor Site Amet Consectetur Adipisicing Elito seddo Eiusmod
+                                    </a>
+                                    <ul class="post-mate-time left">
+                                        <li>
+                                            <p class="hero left">
+                                                By - <a href="#" class="l-blue">SujonMaji</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="post-mate right">
+                                        <li class="like">
+                                            <a href="#">
+                                                <i class="icofont icofont-heart-alt"></i> 55
+                                            </a>
+                                        </li>
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.card-content -->
+                            </div>
+                            <!-- /.card -->
+
+                            <div class="hot-post w100dt mb-10">
+                                <div class="hot-post-image">
+                                    <img src="img/img3.jpg" alt="Image">
+                                    <span class="effect"></span>
+                                </div>
+                                <!-- /.hot-post-image -->
+                                <div class="hot-post-stacked">
+                                    <p>
+                                        <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                    </p>
+                                    <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop
+                                        Saboris</a>
+                                    <div class="hot-post-action">
+                                        <p class="hero left">
+                                            BY - <a href="#" class="l-blue">SujonMaji</a>
+                                        </p>
+                                        <ul class="post-mate right">
+                                            <li class="comment">
+                                                <a href="#">
+                                                    <i class="icofont icofont-comment"></i> 32
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.post-mate -->
+                                    </div>
+                                    <!-- /.hot-post-action -->
+                                </div>
+                                <!-- /.hot-post-stacked -->
+                            </div>
+                            <!-- /.hot-post -->
+
+                            <div class="hot-post w100dt mb-10">
+                                <div class="hot-post-image">
+                                    <img src="img/img2.jpg" alt="Image">
+                                    <span class="effect"></span>
+                                </div>
+                                <!-- /.hot-post-image -->
+                                <div class="hot-post-stacked">
+                                    <p>
+                                        <a href="#" class="tag left w100dt l-blue mb-10">Travel</a>
+                                    </p>
+                                    <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop
+                                        Saboris</a>
+                                    <div class="hot-post-action">
+                                        <p class="hero left">
+                                            BY - <a href="#" class="l-blue">SujonMaji</a>
+                                        </p>
+                                        <ul class="post-mate right">
+                                            <li class="comment">
+                                                <a href="#">
+                                                    <i class="icofont icofont-comment"></i> 32
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.post-mate -->
+                                    </div>
+                                    <!-- /.hot-post-action -->
+                                </div>
+                                <!-- /.hot-post-stacked -->
+                            </div>
+                            <!-- /.hot-post -->
+
+                            <div class="hot-post w100dt mb-10">
+                                <div class="hot-post-image">
+                                    <img src="img/img1.jpg" alt="Image">
+                                    <span class="effect"></span>
+                                </div>
+                                <!-- /.hot-post-image -->
+                                <div class="hot-post-stacked">
+                                    <p>
+                                        <a href="#" class="tag left w100dt l-blue mb-10">Lifestyle</a>
+                                    </p>
+                                    <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop
+                                        Saboris</a>
+                                    <div class="hot-post-action">
+                                        <p class="hero left">
+                                            BY - <a href="#" class="l-blue">SujonMaji</a>
+                                        </p>
+                                        <ul class="post-mate right">
+                                            <li class="comment">
+                                                <a href="#">
+                                                    <i class="icofont icofont-comment"></i> 32
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.post-mate -->
+                                    </div>
+                                    <!-- /.hot-post-action -->
+                                </div>
+                                <!-- /.hot-post-stacked -->
+                            </div>
+                            <!-- /.hot-post -->
+                        </div>
+                        <!-- /.sidebar-posts -->
+
+                    </div>
+                    <!-- /.most-view -->
+
+
+                    <div id="test-swipe-2" class="tab-contant recent-post">
+
+                        <div class="hot-post w100dt p-15">
+                            <div class="hot-post-image">
+                                <img src="img/img3.jpg" alt="Image">
+                                <span class="effect"></span>
+                            </div>
+                            <!-- /.hot-post-image -->
+                            <div class="hot-post-stacked">
+                                <p>
+                                    <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                </p>
+                                <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop Saboris</a>
+                                <div class="hot-post-action">
+                                    <p class="hero left">
+                                        BY - <a href="#" class="l-blue">SujonMaji</a>
+                                    </p>
+                                    <ul class="post-mate right">
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                </div>
+                                <!-- /.hot-post-action -->
+                            </div>
+                            <!-- /.hot-post-stacked -->
+                        </div>
+                        <!-- /.hot-post -->
+
+                        <div class="hot-post w100dt p-15">
+                            <div class="hot-post-image">
+                                <img src="img/img2.jpg" alt="Image">
+                                <span class="effect"></span>
+                            </div>
+                            <!-- /.hot-post-image -->
+                            <div class="hot-post-stacked">
+                                <p>
+                                    <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                </p>
+                                <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop Saboris</a>
+                                <div class="hot-post-action">
+                                    <p class="hero left">
+                                        BY - <a href="#" class="l-blue">SujonMaji</a>
+                                    </p>
+                                    <ul class="post-mate right">
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                </div>
+                                <!-- /.hot-post-action -->
+                            </div>
+                            <!-- /.hot-post-stacked -->
+                        </div>
+                        <!-- /.hot-post -->
+
+                        <div class="hot-post w100dt p-15">
+                            <div class="hot-post-image">
+                                <img src="img/img1.jpg" alt="Image">
+                                <span class="effect"></span>
+                            </div>
+                            <!-- /.hot-post-image -->
+                            <div class="hot-post-stacked">
+                                <p>
+                                    <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                </p>
+                                <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop Saboris</a>
+                                <div class="hot-post-action">
+                                    <p class="hero left">
+                                        BY - <a href="#" class="l-blue">SujonMaji</a>
+                                    </p>
+                                    <ul class="post-mate right">
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                </div>
+                                <!-- /.hot-post-action -->
+                            </div>
+                            <!-- /.hot-post-stacked -->
+                        </div>
+                        <!-- /.hot-post -->
+
+                        <div class="hot-post w100dt p-15">
+                            <div class="hot-post-image">
+                                <img src="img/img3.jpg" alt="Image">
+                                <span class="effect"></span>
+                            </div>
+                            <!-- /.hot-post-image -->
+                            <div class="hot-post-stacked">
+                                <p>
+                                    <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                </p>
+                                <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop Saboris</a>
+                                <div class="hot-post-action">
+                                    <p class="hero left">
+                                        BY - <a href="#" class="l-blue">SujonMaji</a>
+                                    </p>
+                                    <ul class="post-mate right">
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                </div>
+                                <!-- /.hot-post-action -->
+                            </div>
+                            <!-- /.hot-post-stacked -->
+                        </div>
+                        <!-- /.hot-post -->
+
+                        <div class="hot-post w100dt p-15">
+                            <div class="hot-post-image">
+                                <img src="img/img2.jpg" alt="Image">
+                                <span class="effect"></span>
+                            </div>
+                            <!-- /.hot-post-image -->
+                            <div class="hot-post-stacked">
+                                <p>
+                                    <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                </p>
+                                <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop Saboris</a>
+                                <div class="hot-post-action">
+                                    <p class="hero left">
+                                        BY - <a href="#" class="l-blue">SujonMaji</a>
+                                    </p>
+                                    <ul class="post-mate right">
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                </div>
+                                <!-- /.hot-post-action -->
+                            </div>
+                            <!-- /.hot-post-stacked -->
+                        </div>
+                        <!-- /.hot-post -->
+
+                        <div class="hot-post w100dt p-15">
+                            <div class="hot-post-image">
+                                <img src="img/img1.jpg" alt="Image">
+                                <span class="effect"></span>
+                            </div>
+                            <!-- /.hot-post-image -->
+                            <div class="hot-post-stacked">
+                                <p>
+                                    <a href="#" class="tag left w100dt l-blue mb-10">Fashion</a>
+                                </p>
+                                <a href="single-blog.html" class="sm-name mb-10">Trud Exercitation EllaMcop Saboris</a>
+                                <div class="hot-post-action">
+                                    <p class="hero left">
+                                        BY - <a href="#" class="l-blue">SujonMaji</a>
+                                    </p>
+                                    <ul class="post-mate right">
+                                        <li class="comment">
+                                            <a href="#">
+                                                <i class="icofont icofont-comment"></i> 32
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                </div>
+                                <!-- /.hot-post-action -->
+                            </div>
+                            <!-- /.hot-post-stacked -->
+                        </div>
+                        <!-- /.hot-post -->
+
+                    </div>
+                    <!-- /.recent-post -->
+
+
+                    <div id="test-swipe-3" class="tab-contant Comments-post">
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img1.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img2.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img3.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img1.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img1.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img1.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img2.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img3.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img1.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                        <div class="card-panel grey lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s3">
+                                    <img src="img/img1.png" alt="Image" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s9">
+											<span class="black-text">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card-panel -->
+
+                    </div>
+                    <!-- /.tab-contant -->
+                </div>
+                <!-- /.top-post -->
+
+
+            </div>
+            <!-- colm4 -->
+
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+<!-- /#cateogry-section -->
+<!-- ==================== cateogry-section end ==================== -->
+
+
+
+<!-- ==================== footer-section Start ==================== -->
+<footer id="footer-section" class="footer-section w100dt">
+    <div class="container">
+
+        <div class="footer-logo w100dt center-align mb-30">
+            <a href="#" class="brand-logo">
+                <img src="img/kir.png" alt="brand-logo">
+            </a>
+        </div>
+        <!-- /.footer-logo -->
+
+        <ul class="footer-social-links w100dt center-align mb-30">
+            <li><a href="#" class="facebook">微信</a></li>
+            <li><a href="#" class="twitter">QQ</a></li>
+            <li><a href="#" class="google-plus">微博</a></li>
+        </ul>
+
+        <p class="center-align">
+            <i class="icofont icofont-heart-alt l-blue"></i>
+            Copyright &copy; 2021 <a target="_blank" href="/"> KIT SECRET</a>
+            &nbsp | &nbsp <img src="img/icp.png" style="width: 18px"> <a href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备2021073345号</a>
+        </p>
+
+    </div>
+    <!-- container -->
+</footer>
+<!-- /#footer-section -->
+<!-- ==================== footer-section End ==================== -->
+
+
+<!-- my custom js -->
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="lib/layui-v2.6.3/layui.js"></script>
+<script src="js/jquery.cookie.js"></script>
+
+<!-- my custom js -->
+<script type="text/javascript" src="js/custom.js"></script>
+<!--		数据模板-->
+<script id="person_info" type="text/html">
+    <div class="col m12 s12 ">
+        <img  src="{{d[0].head_img}}" style="margin-top: 10px" salt="Image">
+        </div>
+        <h3  class="col m12 s6 offset-s3" style="line-height: 30px;text-align: center">{{d[0].username}}</h3>
+        <div class="col m12 s6  offset-s3">
+        <small class="col m12 s12 " style="margin-top: 10px;text-align: center"">博文：{{d[0].article}}</small>
+    <small class="col m12 s12" style="margin-top: 10px;text-align: center"">粉丝：{{d[0].follow}}</small>
+
+    </div>
+</script>
+<script id="side_feature" type="text/html">
+    {{# for (var i = 0; i < d.length; i++){ }}
+    <div class="card">
+        <div class="card-image mb-10">
+            <a href="single-blog.html?id={{d[i].id}}"><img src="{{d[i].cover}}" alt="Image" ></a>
+            <span class="effect"></span>
+        </div>
+        <!-- /.card-image -->
+        <div class="card-content w100dt">
+            <p>
+                <a href="single-blog.html?id={{d[i].id}}" class="tag left w100dt l-blue mb-10">{{d[i].label}}</a>
+            </p>
+            <a href="single-blog.html?id={{d[i].id}}" class="card-title">
+                {{d[i].title}}
+            </a>
+            <ul class="post-mate-time left">
+                <li>
+                    <p class="hero left">
+                        By - <a href="personal.html?id={{d[i].author_id}}" class="l-blue">{{d[i].author_name}}</a>
+                    </p>
+                </li>
+            </ul>
+
+            <ul class="post-mate right">
+                <li class="like">
+                    <a href="#">
+                        <i class="icofont icofont-heart-alt"></i> {{d[i].like}}
+                    </a>
+                </li>
+                <li class="comment">
+                    <a href="#">
+                        <i class="icofont icofont-comment"></i> {{d[i].view}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.card-content -->
+    </div>
+    {{# } }}
+</script>
+<script id="side_order_view" type="text/html">
+    <div class="sidebar-posts">
+        <div class="card">
+            <div class="card-image mb-10">
+                <img src="{{d[0].cover}}" alt="Image">
+                <span class="effect"></span>
+            </div>
+            <!-- /.card-image -->
+            <div class="card-content w100dt">
+                <p>
+                    <a href="#" class="tag left w100dt l-blue mb-10">{{d[0].label}}</a>
+                </p>
+                <a href="single-blog.html" class="card-title">
+                    {{d[0].title}}
+                </a>
+                <ul class="post-mate-time left">
+                    <li>
+                        <p class="hero left">
+                            By - <a href="#" class="l-blue">{{d[0].author_name}}</a>
+                        </p>
+                    </li>
+                </ul>
+
+                <ul class="post-mate right">
+                    <li class="like">
+                        <a href="#">
+                            <i class="icofont icofont-heart-alt"></i> {{d[0].good}}
+                        </a>
+                    </li>
+                    <li class="comment">
+                        <a href="#">
+                            <i class="icofont icofont-comment"></i> {{d[0].view}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-content -->
+        </div>
+        <!-- /.card -->
+        {{# for (var i = 1; i < d.length; i++){ }}
+        <div class="hot-post w100dt mb-10">
+            <div class="hot-post-image">
+                <img src="{{d[i].cover}}" alt="Image">
+                <span class="effect"></span>
+            </div>
+            <!-- /.hot-post-image -->
+            <div class="hot-post-stacked">
+                <p>
+                    <a href="#" class="tag left w100dt l-blue mb-10">{{d[i].label}}</a>
+                </p>
+                <a href="single-blog.html" class="sm-name mb-10">{{d[i].title}}</a>
+                <div class="hot-post-action">
+                    <p class="hero left">
+                        BY - <a href="#" class="l-blue">{{d[i].author_name}}</a>
+                    </p>
+                    <ul class="post-mate right">
+                        <li class="comment">
+                            <a href="#">
+                                <i class="icofont icofont-comment"></i> {{d[i].view}}
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.post-mate -->
+                </div>
+                <!-- /.hot-post-action -->
+            </div>
+            <!-- /.hot-post-stacked -->
+        </div>
+        <!-- /.hot-post -->
+        {{# } }}
+    </div>
+</script>
+<script id="side_order_date" type="text/html">
+    {{# for (var i = 0; i < d.length; i++){ }}
+    <div class="hot-post w100dt p-15">
+        <div class="hot-post-image">
+            <a href="single-blog.html?id={{d[i].id}}">
+                <img src="{{d[i].cover}}" alt="Image">
+            </a>
+            <span class="effect"></span>
+        </div>
+        <!-- /.hot-post-image -->
+        <div class="hot-post-stacked">
+            <p>
+                <a href="#" class="tag left w100dt l-blue mb-10">{{d[i].label}}</a>
+            </p>
+            <a href="single-blog.html" class="sm-name mb-10">{{d[i].title}}</a>
+            <div class="hot-post-action">
+                <p class="hero left">
+                    BY - <a href="#" class="l-blue">{{d[i].author_name}}</a>
+                </p>
+                <br>
+                <span>{{d[i].date}}</span>
+                <ul class="post-mate right">
+                    <li class="comment">
+                        <a href="#">
+                            <i class="icofont icofont-comment"></i> {{d[i].view}}
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.post-mate -->
+            </div>
+            <!-- /.hot-post-action -->
+        </div>
+        <!-- /.hot-post-stacked -->
+    </div>
+    {{# } }}
+</script>
+<script id="search-list" type="text/html">
+
+    {{# for (var i = 0; i < d.data.length; i++){ }}
+    <div class="col m6 s12">
+        <div class="blogs mb-30">
+            <div class="card">
+                <div class="card-image">
+                    {{# if( getQueryVariable("id")==$.cookie("userId") ){ }}
+                    {{# if(d.class=='article') { }}
+                    <div class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light" style="right: 80px;
+                             background-color: orange !important;" onclick="delete_blog({{d.data[i].id}})">
+                        <i class="layui-icon-delete layui-icon yellow-text "></i>
+                    </div>
+                    <a href="single-blog.html?id={{d.data[i].id}}"> <img src="{{d.data[i].cover}}" alt="Image"></a>
+                    <div class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light delete"
+                         onclick="update_blog({{d.data[i].id}})">
+
+                        <i class="small blue-text layui-icon  layui-icon-edit"></i>
+                    </div>
+                    {{#  }  }}
+                    {{# if(d.class!='article'){ }}
+                    <a href="single-blog.html?id={{d.data[i].id}}"> <img src="{{d.data[i].cover}}" alt="Image"></a>
+                    <div class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light delete"
+                         id="{{d.data[i].id}" onclick="collect({{d.data[i].id}},this)">
+
+                        <i class="small blue-text layui-icon  layui-icon-rate-solid"></i>
+                    </div>
+                    {{# }  }}
+                    {{# }  }}
+                    {{# if( getQueryVariable("id")!=$.cookie("userId")) { }}
+                    <a href="single-blog.html?id={{d.data[i].id}}"> <img src="{{d.data[i].cover}}" alt="Image"></a>
+                    {{# }  }}
+                </div>
+                <!-- /.card-image -->
+                <div class="card-content w100dt">
+
+                    <p>
+                        <a href="single-blog.html?id={{d.data[i].id}}"
+                           class="tag left w100dt l-blue mb-30">Lifestyle</a>
+                    </p>
+                    <a href="single-blog.html?id={{d.data[i].id}}" class="card-title">
+                        {{d.data[i].title}}
+                    </a>
+                    <p class="mb-30">
+                        {{d.data[i].sub_title}} </p>
+                    <ul class="post-mate-time left">
+                        <li>
+                            <p class="hero left">
+                                By - <a href="personal.html?id={{d.data[i].authorId}}"
+                                        class="l-blue">{{d.data[i].author_name}}</a>
+                            </p>
+                        </li>
+                        <br>
+                        <li>
+                            <i class="icofont icofont-ui-calendar"></i> {{d.data[i].date}}
+                        </li>
+                    </ul>
+
+                    <ul class="post-mate right" style="float: right">
+                        <li class="like">
+
+                                <i class="icofont icofont-heart-alt"></i> {{d.data[i].good}}
+
+                        </li>
+                        <li class="comment">
+
+                                <i class="icofont icofont-comment"></i> {{d.data[i].view}}
+
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.card-content -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.blogs -->
+    </div>
+    {{# } }}
+</script>
+<script id="search-userList" type="text/html">
+
+    {{# for (var i = 0; i < d.data.length; i++){ }}
+    <div class="col m12 s12">
+        <div class="blogs mb-30" style="background-color: white">
+            <div class="card">
+                <div class="card-image col m2 s4">
+                    <a href="personal.html?id={{d.data[i].id}}">
+                        <img src="{{d.data[i].head_img}}" style="width: 100px;margin-top: 10px"   alt="Image">
+                    </a>
+                </div>
+                <!-- /.card-image -->
+                <div class="card-content  col m8 s8">
+                    <div class="col m12 s8">
+                        <a href="personal.html?id={{d.data[i].id}}" class="col m2 s4">
+                            <h5 style="line-height: 30px">{{d.data[i].username}}</h5>
+                        </a>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm col m4 s6 " id="{{d.data[i].id}}" onclick="follow({{d.data[i].id}},this)">
+                             <i class="layui-icon  layui-icon-close-fill"></i>
+                             取消关注
+                        </button>
+                    </div>
+                    <small class="col m3 s6 " style="margin-top: 20px">博文：{{d.data[i].article}}</small>
+                    <small class="col m3 s6" style="margin-top: 20px">粉丝：{{d.data[i].follow}}</small>
+                </div>
+                <!-- /.card-content -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.blogs -->
+    </div>
+    {{# } }}
+</script>
+
+<!--		渲染逻辑-->
+<script>
+
+    let laytpl = layui.laytpl;
+    let laypage = layui.laypage;
+
+
+    $.ajax({
+        url:'user/searchUserInfo',
+        type:'get',
+        dataType:'json',
+        data:{single:1,id:getQueryVariable("id"),pageNum:1,pageSize:5},
+        success:function (data) {
+              let model=document.getElementById("person_info").innerHTML;
+              let view=document.getElementById("info");
+              laytpl(model).render(data.data,function(html){
+                  view.innerHTML=html;
+            })
+        }
+    })
+
+    //侧边栏渲染
+    $.ajax({
+        url: 'article/searchByCondition',
+        type: 'get',
+        data: {condition: 'group'},
+        dataType: 'json',
+        success: function (data) {
+            let model = document.getElementById('side_feature').innerHTML;
+            let view = document.getElementById('feature');
+            laytpl(model).render(data.data, function (html) {
+                view.innerHTML = html;
+                return false;
+            })
+        }
+    });
+
+    $.ajax({
+        url: 'article/searchByCondition',
+        type: 'get',
+        data: {condition: 'limit', order: 'view', limit: 3},
+        dataType: 'json',
+        success: function (data) {
+            let model = document.getElementById('side_order_view').innerHTML;
+            let view = document.getElementById('test-swipe-1');
+            laytpl(model).render(data.data, function (html) {
+                view.innerHTML = html;
+                return false;
+            })
+        }
+    });
+    $.ajax({
+        url: 'article/searchByCondition',
+        type: 'get',
+        data: {condition: 'limit', order: 'date'},
+        dataType: 'json',
+        success: function (data) {
+            let model = document.getElementById('side_order_date').innerHTML;
+            let view = document.getElementById('test-swipe-2');
+            laytpl(model).render(data.data, function (html) {
+                view.innerHTML = html;
+                return false;
+            })
+        }
+    });
+
+
+    $(document).ready(function () {
+        search(null, null, 'article');
+        //用户信息回显
+        if ($.cookie("username") != null) {
+            let username = $.cookie("username");
+            let user = $('#user');
+            user.text(username);
+            user.attr("href", "personal.html?id="+$.cookie("userId"));
+            let userSwitch = $('.userSwitch');
+            userSwitch.addClass("showUserSwitch");
+            let person=$('#person');
+            person.attr("href", "personal.html?id="+$.cookie("userId"));
+            person.css("display","block");
+        }
+        if(getQueryVariable("id")==$.cookie("userId")){
+            $('.article').text('我的博文');
+            $('.collect').text('我的收藏');
+            $('.follow').text('我的关注');
+        }
+        else {
+            $('.article').text('他的博文');
+            $('.collect').text('他的收藏');
+            $('.follow').text('他的关注');
+        }
+
+
+    })
+
+
+    $('#search').click(function () {
+        let Class = $('#Class').attr("class");
+        search(null, 1, Class);
+        $('.area').css("display", "block");
+        $('.area').css("margin-top", "10px");
+
+    });
+
+
+    $('#search-box').keydown(function (event) {
+        if (event.which == 13)
+            search(null, null);
+    })
+
+    //分类按钮
+    $('.article').click(function () {
+        $('.a-order').css("display", "block");
+        $('.u-order').css("display", "none");
+        $('#Class').attr("class", 'article');
+        search(null, null, 'article');
+    });
+
+    $('.collect').click(function () {
+        $('.a-order').css("display", "block");
+        $('.u-order').css("display", "none");
+        $('#Class').attr("class", 'collect');
+        search(null, null, 'collect');
+    });
+    $('.follow').click(function () {
+        $('.u-order').css("display", "block");
+        $('.a-order').css("display", "none");
+        $('#Class').attr("class", 'follow');
+        search(null, null, 'follow');
+    })
+
+    //点击排序按钮
+
+    //文字排序
+    $('.a-order,.u-order').click(function () {
+        let Class = $('#Class').attr("class");
+        search(this.id, 1, Class);
+    });
+
+
+    function showArticle(param) {
+        $.ajax({
+            url: param.url,
+            type: 'get',
+            data: param,
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                //渲染模板
+                let model;
+                if (param.follow == 1)
+                    model = document.getElementById("search-userList").innerHTML;
+                else
+                    model = document.getElementById("search-list").innerHTML;
+                let view = document.getElementById("list");
+                laytpl(model).render(data, function (html) {
+                    view.innerHTML = html;
+                    return false;
+                });
+                // window.location = '#search-box';
+
+                return false;
+            }
+        });
+        return false;
+    }
+
+    function search(order, key, Class) {
+        let param = {pageNum: 1, pageSize: 5};
+        let url;
+        if (key != null) {
+            key = document.getElementById('search-box').value;
+            param.key = key;
+            param.like = 1;
+            param.where = 1;
+        }
+        if (order != null)
+            param.order = order;
+        if (Class == 'article') {
+            param.article = 1;
+            param.where = 1;
+            param.id = getQueryVariable("id");
+            url = '/article/searchByCondition'
+        } else if (Class == 'collect') {
+            param.collect = 1;
+            param.where = null;
+            param.id = getQueryVariable("id");
+            url = '/article/searchByCondition'
+        } else if (Class == 'follow') {
+            param.follow = 1;
+            param.where = null;
+            param.id = getQueryVariable("id");
+            url = 'user/searchUserInfo'
+        }
+
+        $.ajax({
+            url: url
+            , type: 'get'
+            , dataType: 'json'
+            , data: param
+            , success: function (data) {
+                if (key != null)
+                    $('.search-info h4').text("找到关于" + key + "的" + data.count + "条记录");
+                if(data.count>0){
+                    laypage.render({
+                        elem: 'pagination'
+                        , count: data.count
+                        , limit: 5
+                        , limits: [10, 20]           //可选择的每页显示条数-->
+                        , curr: 1                        //起始页-->
+                        , groups: 5                      //连续页码个数-->
+                        , prev: '<i class="layui-icon layui-icon-left" style="font-size: 18px; color: #1E9FFF;"></i>  '                 //上一页文本-->
+                        , next: '<i class="layui-icon layui-icon-right" style="font-size: 18px; color: #1E9FFF;"></i>  '                 //下一页文本-->
+                        , first: '首页'                     //首页文本-->
+                        , last: '尾页'
+                        , layout: ['limit', 'count', 'prev', 'page', 'next']
+                        , theme: '#2962ff'
+                        , jump: function (obj, first) {
+                            param.pageNum = obj.curr;
+                            param.pageSize = obj.limit;
+                            param.url = url;
+                            showArticle(param)
+                        }
+                    });
+                }
+                else{
+                    $('#list').html('<img src="img/empty.png" alt="">');
+                    $('#pagination').html('');
+                }
+
+            }
+        })
+    }
+
+
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        return false;
+    }
+
+    function delete_blog(id) {
+        layer.confirm('确认删除?', {
+            icon: 3,
+            title: ['提示', ' color:orange  ;font-size:20px'],
+            btnAlign: 'c',
+            textAlign: 'center'
+        }, function (index) {
+            //do something
+            $.ajax({
+                url: 'article/delete',
+                type: 'delete',
+                data: {id: id},
+                dataType: 'json',
+                success: function () {
+                    search(null, null, 'article');
+                }
+            })
+            layer.close(index);
+        });
+
+    }
+
+    function update_blog(id) {
+        window.location.href = "writeblog.html?id=" + id;
+    }
+
+    function collect(id, obj) {
+        let param = {collect_id: $.cookie("userId"), article_id: id};
+        if (obj.id == id) {
+            obj.innerHTML = '<i class="small blue-text layui-icon  layui-icon-rate" ></i>';
+            obj.id='abc';
+            param.delete = 1;
+        } else {
+            obj.id = id;
+            obj.innerHTML = ' <i class="small blue-text layui-icon  layui-icon-rate-solid" ></i>';
+            param.add = 1;
+        }
+        $.ajax({
+            url: '/article/collect',
+            type: 'post',
+            dataType: 'json',
+            data: param,
+            success: function () {
+                return false;
+            }
+        })
+    }
+
+    function follow(id,obj) {
+        let param = {follow_id:id , follower_id: $.cookie("userId")};
+        if (obj.id == id) {
+            obj.innerHTML = '<i class="layui-icon  layui-icon-add-1"></i> '+'关注';
+            obj.id='abc';
+            param.delete = 1;
+        } else {
+            obj.id = id;
+            obj.innerHTML = '<i class="layui-icon  layui-icon-close-fill"></i>'+'取消关注';
+            param.add = 1;
+        }
+        $.ajax({
+            url: '/article/follow',
+            type: 'post',
+            dataType: 'json',
+            data: param,
+            success: function () {
+                return false;
+            }
+        })
+    }
+
+</script>
+
+
+</body>
+
+</html>

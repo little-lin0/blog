@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.kit00.blog.dao.CollectMapper">
+
+  <resultMap id="BaseResultMap" type="xyz.kit00.blog.bean.Collect">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <id column="collect_id" jdbcType="INTEGER" property="collectId" />
+  </resultMap>
+
+  <insert id="insert" parameterType="xyz.kit00.blog.bean.Collect">
+    insert into collect (id, article_id, collect_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{articleId,jdbcType=INTEGER}, #{collectId,jdbcType=INTEGER}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, article_id, collect_id
+    from collect
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from collect
+            where
+       article_id = #{article_id,jdbcType=INTEGER}
+      and collect_id = #{collect_id,jdbcType=INTEGER}
+  </delete>
+
+
+</mapper>

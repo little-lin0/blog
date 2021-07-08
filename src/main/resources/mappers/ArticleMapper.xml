@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.kit00.blog.dao.ArticleMapper">
+  <resultMap id="BaseResultMap"  type="xyz.kit00.blog.bean.Article" >
+    <id column="article.id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="sub_title" jdbcType="VARCHAR" property="sub_title" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+      <result column="author_name" jdbcType="VARCHAR" property="author_name" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="view" jdbcType="INTEGER" property="view" />
+    <result column="good" jdbcType="INTEGER" property="good" />
+    <result column="collect" jdbcType="INTEGER" property="collect" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="cover" jdbcType="VARCHAR" property="cover" />
+    <result column="label" jdbcType="VARCHAR" property="label" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from article
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="xyz.kit00.blog.bean.Article">
+    insert into article ( title,sub_title,author_id,author_name,
+      date, cover, label,
+      content)
+    values ( #{title,jdbcType=VARCHAR}, #{sub_title,jdbcType=VARCHAR},#{authorId,jdbcType=INTEGER},
+      #{author_name,jdbcType=VARCHAR},  NOW(), #{cover,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR},
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+
+
+  <update id="updateByPrimaryKey" parameterType="xyz.kit00.blog.bean.Article">
+    update article
+    <set>
+     <if test="title!=null and title!=''">
+         title = #{title,jdbcType=VARCHAR},
+     </if>
+      <if test="sub_title!=null and sub_title!=''">
+          sub_title=#{sub_title,jdbcType=VARCHAR},
+      </if>
+      <if test="date!=null and date!=''">
+          date = #{date,jdbcType=DATE},
+      </if>
+      <if test="view!=null and view!=''">
+          view = view+1,
+      </if>
+      <if test="good!=null and good!=''">
+          good = good+1,
+      </if>
+      <if test="collect!=null and collect!=''">
+         <if test="add!=null and add!=''">
+             collect = collect+1,
+         </if>
+          <if test="delete!=null and delete!=''">
+              collect = collect-1,
+          </if>
+
+      </if>
+      <if test="state!=null and state!=''">
+          state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="cover!=null and cover!=''">
+          cover = #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="label!=null and label!=''">
+          label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="content!=null and content!=''">
+        content =#{content,jdbcType=LONGVARCHAR}
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey"  resultMap="BaseResultMap">
+    select id, title,sub_title,author_id, author_name,DATE_FORMAT(date,'%Y-%m-%d %H:%i') as date, view, good, collect, state, cover, label, content
+    from article
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="searchByCondition" resultMap="BaseResultMap">
+        select
+        article.id, title,sub_title,author_id,author_name, DATE_FORMAT(date,'%Y-%m-%d %H:%i') as date, view, good, collect, state, cover, label, content
+        from  article
+        <if test="collect!=null and collect!=''">
+        ,collect,user
+        WHERE article.id=article_id AND collect_id=user.id and user.id=#{id}
+            <if test="like!=null and like!=''">
+                and ( title like concat('%',#{key},'%')
+                or sub_title like concat('%',#{key},'%')
+                or content like concat('%',#{key},'%')
+                or label like concat('%',#{key},'%')
+                )
+            </if>
+        </if>
+        <if test="where!=null and where!=''">
+            <where>
+                <if test="article!=null and article!=''">
+                    author_id=#{id}
+                </if>
+                <if test="single!=null and single!=''">
+                    and  id!=#{id}
+                 </if>
+                 <if test="like!=null and like!=''">
+                     and ( title like concat('%',#{key},'%')
+                     or sub_title like concat('%',#{key},'%')
+                     or content like concat('%',#{key},'%')
+                     or label like concat('%',#{key},'%')
+                     )
+                 </if>
+                 <if test="cateogry!=null and cateogry!=''">
+                     label like concat('%',#{cateogry},'%')
+                 </if>
+            </where>
+        </if>
+        <if test="condition=group">
+            group by id, title,sub_title,author_id,author_name, DATE_FORMAT(date,'%Y-%m-%d %H:%i') as date, view, good, collect, state, cover, label, content
+        </if>
+        <if test="order!=null and order!=''">
+            order by  ${order} desc
+        </if>
+        <if test="limit!=null and limit!=''">
+            limit ${limit}
+        </if>
+    </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, title,sub_title,author_id,author_name, DATE_FORMAT(date,'%Y-%m-%d %H:%i') as date, view, good, collect, state, cover, label, content
+    from article
+  </select>
+    <select id="searchcollectArticle" resultMap="BaseResultMap">
+
+    </select>
+</mapper>

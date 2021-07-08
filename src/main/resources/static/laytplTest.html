@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="lib/layui-v2.6.3/css/layui.css">
+
+
+</head>
+<body>
+<form action="403.html" method="post">
+
+    <input type="checkbox" name="remember-me">
+    <input type="submit">
+</form>
+<div id="view">
+</div>
+<script id="model" type="text/html">
+    {{# for (var i = 0; i < d.length; i++){ }}
+    <p>{{d[i].id}}</p>
+    <p>{{d[i].username}}</p>
+    <p>{{d[i].email}}</p>
+    <p>{{d[i].password}}</p>
+    <p>{{d[i].status}}</p>
+    {{# } }}
+</script>
+<script id="blog" type="text/html">
+    {{# for (var i = 0; i < d.length; i++){ }}
+    <div class="blogs mb-30">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{d[i].cover}}" alt="Image">
+                <a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+                    <i class="icofont icofont-camera-alt"></i>
+                </a>
+            </div>
+            <!-- /.card-image -->
+            <div class="card-content w100dt">
+                <p>
+                    <a href="#" class="tag left w100dt l-blue mb-30">Lifestyle</a>
+                </p>
+                <a href="single-blog.html" class="card-title">
+                    {{d[i].title}}
+                </a>
+                <p class="mb-30">
+                    {{d[i].sub_title}}
+                </p>
+                <ul class="post-mate-time left">
+                    <li>
+                        <p class="hero left">
+                            By - <a href="#" class="l-blue">{{d[i].author}}</a>
+                        </p>
+                    </li>
+                    <li>
+                        <i class="icofont icofont-ui-calendar"></i> {{d[i].date}}
+                    </li>
+                </ul>
+
+                <ul class="post-mate right">
+                    <li class="like">
+                        <a href="#">
+                            <i class="icofont icofont-heart-alt"></i> {{d[i].good}}
+                        </a>
+                    </li>
+                    <li class="comment">
+                        <a href="#">
+                            <i class="icofont icofont-comment"></i> {{d[i].view}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.card-content -->
+        </div>
+        <!-- /.card -->
+    </div>
+    {{# } }}
+</script>
+
+    <form  style="display: none" method="post" action="/uploadImg" enctype="multipart/form-data">
+    <label for="file">上传图片</label>
+    <div id="file"></div>
+    <input type="submit" >
+</form>
+     <from style="display: none">
+    文件: <input type="file" name="myFile" id="myFile" multiple onchange="getFileContext()"><br>
+    <img id="img"><br>
+    <input type="submit">
+</from>
+<script>
+    function getFileContext() {
+        var reader=new FileReader();
+        //需要的参数是图片
+        var file=document.querySelector("#myFile").files;
+        // 没有返回值，将其结果储存在result中，无法判断文件是否读完
+        reader.readAsDataURL(file[0]);
+        reader.onload=function () {
+            //    展示出来：得到的reader.result为二进制文件base64  data:image/jpeg;base64...
+            console.log(reader.result);
+            document.querySelector("#img").src=reader.result;
+        }
+    }
+
+
+</script>
+
+<script src="lib/layui-v2.6.3/layui.js"></script>
+<script src="layui_exts/tinymce/tinymce/tinymce.min.js"></script>
+<script>
+
+    // alert(getQueryVariable("id"));
+
+    layui.extend({
+        tinymce: './layui_exts/tinymce/tinymce'
+    }).use(['laytpl', 'tinymce'], function () {
+        let laytpl = layui.laytpl;
+        let data = 1;
+        let $ = layui.jquery;
+        $.ajax({
+            url: '/article/articleList',
+            type: 'get',
+            data: {pageNum: 1, pageSize: 5},
+            dataType: 'json',
+            success: function (d) {
+                data = d.data;
+                let model = document.getElementById("blog").innerHTML,
+                    view = document.getElementById("view");
+                laytpl(model).render(data, function (html) {
+                    view.innerHTML = html;
+                    return false;
+                });
+                return false;
+            }
+        });
+
+        let cover = layui.tinymce;
+        cover.render({
+            // automatic_uploads:false,
+            selector: '#file',
+            skin: 'oxide',
+            inline: true,
+            language:'zh_CN',
+            placeholder:'请添加封面',
+            plugins: 'image',
+            toolbar: 'image',
+            menubar: false,
+            // images_upload_url: '/uploadImg',
+            // images_upload_base_path: '',
+            // images_upload_handler: true,
+            images_upload_handler: function (blobInfo, success, failure) {
+                var form = new FormData();
+
+                // blobInfo.blob()为数据流
+
+                // blobInfo.filename()为文件名
+
+                //  根据自己的需求取值
+                form.append('file', blobInfo.blob(), blobInfo.filename());
+                $.ajax({
+                    url: '/uploadImg',
+                    type: "post",
+                    data: form,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        success(data); // 这里为图片上传成功之后所获取的图片路径赋值给下面的截图中的地址一栏
+                    },
+                    error: function(e) {
+                        alert("图片上传失败");
+                    }
+                });
+            },
+
+        });
+
+        $.ajax({
+            url:'https://www.dedao.cn/ebk_web/v1/get_pages',
+            type:'post',
+            dataType: 'jsonp',
+            crossOrigin:true,
+
+                withCredentials: true ,//默认情况下，标准的跨域请求是不会发送cookie的,
+
+            success:function (data) {
+                alert('hello');
+            }
+        });
+        return false;
+    });
+
+</script>
+</body>
+</html>

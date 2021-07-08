@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.kit00.blog.dao.FollowMapper">
+
+
+  <resultMap id="BaseResultMap" type="xyz.kit00.blog.bean.Follow">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="follow_id" jdbcType="INTEGER" property="followId" />
+    <id column="follower_id" jdbcType="INTEGER" property="followerId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from follow
+    where  follow_id = #{follow_id,jdbcType=INTEGER}
+      and follower_id = #{follower_id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="xyz.kit00.blog.bean.Follow">
+    insert into follow (follow_id, follower_id
+      )
+    values (#{follow_id,jdbcType=INTEGER}, #{follower_id,jdbcType=INTEGER}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, follow_id, follower_id
+    from follow
+  </select>
+</mapper>

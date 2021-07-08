@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.kit00.blog.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="xyz.kit00.blog.bean.User">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="head_img" jdbcType="VARCHAR" property="head_img"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="xyz.kit00.blog.bean.User">
+    insert into user (id, username, email, 
+      password)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR})
+  </insert>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select id, username, email, password, status,head_img
+    from user
+  </select>
+
+    <select id="selectByPrimaryKey" resultType="xyz.kit00.blog.bean.User">
+       select * from user where id=#{id}
+   </select>
+    <select id="selectByCondition" resultType="xyz.kit00.blog.bean.User">
+        select
+        *
+        from
+        user
+        <where>
+            <choose>
+                <when test="start!=null and start!=''and end!=null and end!=''">
+                    and date between #{start} and #{end}
+                </when>
+                <when test="start!=null and start!=''">
+                    and date &gt;=#{start}
+                </when>
+                <when test="end!=null and end!=''">
+                    and date &lt;=#{end}
+                </when>
+            </choose>
+            <if test="username!=null and username!=''">
+                and username
+                <choose>
+                    <when test="like!=null and like!=''">
+                        like concat('%',
+                        #{username},
+                        '%')
+                    </when>
+                    <otherwise>
+                        =#{username}
+                    </otherwise>
+                </choose>
+
+
+            </if>
+            <if test="email!=null and email!=''">
+                and email=#{email}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectUserInfo" resultType="xyz.kit00.blog.bean.UserInfo">
+        SELECT b.id, username,head_img,article,COUNT(*) follow
+        FROM (SELECT user.id,username,head_img,COUNT(*) article
+        FROM user LEFT JOIN article ON user.id=author_id
+        WHERE
+        <choose>
+            <when test="follow!=null and follow!=''">
+                user.id in (SELECT follow_id
+                FROM follow,user
+                WHERE user.id=follower_id AND user.id=#{id})
+            </when>
+            <when test="single!=null and single!=''">
+                user.id=#{id}
+            </when>
+            <otherwise>
+                username like concat('%',#{key},'%')
+            </otherwise>
+        </choose>
+
+
+        GROUP BY user.id,head_img ) AS b LEFT JOIN follow
+        ON follow_id=b.id
+        GROUP BY b.id
+        <if test="like!=null and like!=''">
+          having username like concat('%',#{key},'%')
+        </if>
+
+        <if test="order!=null and order!=''">
+            order by #{order} desc
+        </if>
+    </select>
+</mapper>

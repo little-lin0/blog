@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*body{*/
+        /*    background-image: url("../images/gaomu.png");*/
+        /*}*/
+    </style>
+    <script src="layui_exts/tinymce/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#content',
+            skin: 'oxide',
+            content_css:''
+
+            // plugins: [ 'quickbars' ],
+            // toolbar: false,
+            // menubar: false,
+            // inline: true,
+            // quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
+            // quickbars_insert_toolbar: 'quickimage quicktable'
+        });
+        tinymce.init({
+            selector: '#title',
+            // skin: 'oxide-dark',
+            plugins: [ 'quickbars' ],
+            toolbar: false,
+            menubar: false,
+            inline: true,
+            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
+            quickbars_insert_toolbar: 'quickimage quicktable'
+        });
+        tinymce.init({
+            selector: '#label',
+            // skin: 'oxide-dark',
+            plugins: [ 'quickbars' ],
+            toolbar: false,
+            menubar: false,
+            inline: true,
+            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote',
+            quickbars_insert_toolbar: 'quickimage quicktable'
+        });
+    </script>
+</head>
+<body>
+<h1>TinyMCE快速开始示例</h1>
+<form method="post" action="#">
+    <div id="title">title</div>
+    <div id="content" >Hello, World!</div>
+    <div id="label" >label</div>
+    <input type="submit">
+</form>
+<input type="text" class="layui-input" id="test1">
+</body>
+</html>

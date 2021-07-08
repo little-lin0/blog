@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Single - Future Imperfect by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <style>
+        #content {
+            height: 40%;
+            margin-bottom: 50px;
+        }
+
+        label {
+            font-size: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body class="single is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a>编辑博文</a></h1>
+        <nav class="links">
+            <ul>
+<!--                <li><a href="#">保存草稿</a></li>-->
+                <li><a onclick="window.location.href='personal.html?id='+$.cookie('userId')">回到个人主页</a></li>
+                <li><a href="index.html">回到首页</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Post -->
+        <form class="layui-form" method="post" action="/article/addArticle" enctype="multipart/form-data" id="form">
+            <input type="hidden" name="_method" value="put" id="method">
+            <input type="hidden" name="id" id="article_id">
+            <article class="post">
+
+                <header>
+
+                    <div class="title layui-form-item">
+                        <div class="layui-form-item">
+                            <!--                            <label class="layui-form-label">请输入标题</label>-->
+                            <h2 id="title" ><a href=""></a></h2>
+                            <!--                            <label class="layui-form-label">请输入副标题</label>-->
+                            <div id="sub_title"><p></p></div>
+                        </div>
+
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2015-11-01" id="time">November 1, 2015</time>
+                        <a href="#" class="author">
+                            <span class="name" id="author">Jane Doe</span>
+                            <img src="img/avatar.jpg" alt="" id="head_img"/>
+                        </a>
+                    </div>
+                </header>
+                <label class="layui-form-label">封面图片</label>
+                <div class="image featured" id="cover">
+                    <input type="file" name="cover" multiple onchange="show_img()" id="file">
+                    <img src="" alt="" id="show-cover">
+                </div>
+                <label class="layui-form-label" >正文</label>
+                <div id="content">
+
+                </div>
+                <label class="layui-form-label">标签</label>
+                <footer id="label">
+
+                </footer>
+
+            </article>
+            <div class="input-group">
+                <input type="reset" id="reset" class="layui-input" lay-submit lay-filter="reset"
+                       style="margin-right: 10%;margin-bottom:10%;float: right">
+                <input type="submit" class="layui-input" lay-submit lay-filter="submit"
+                       style="margin-bottom:10%;float: right" onclick="label()">
+            </div>
+
+
+        </form>
+    </div>
+
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="lib/layui-v2.6.3/layui.js"></script>
+<script src="layui_exts/tinymce/tinymce/tinymce.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        var d=new Date();
+        $('#time').text(d.getMonth()+"-"+d.getDate()+"-"+d.getFullYear());
+        var username=$.cookie("username");
+        $('#author').text(username);
+        var src=$.cookie("head_img");
+        $('#head_img').attr("src",src);
+
+    })
+
+    function show_img() {
+    var imgFile = document.querySelector("#file").files;
+    var fr = new FileReader();
+    fr.readAsDataURL(imgFile[0]);
+    fr.onload = function () {
+        console.log(fr.result);
+        document.querySelector("#show-cover").src = fr.result;
+    };
+}
+
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        return false;
+    }
+
+
+    layui.extend({
+        tinymce: './layui_exts/tinymce/tinymce'
+    }).use(['tinymce', 'form'], function () {
+        var title = layui.tinymce;
+        var sub_title = layui.tinymce;
+        var cover = layui.tinymce;
+        var content = layui.tinymce;
+        var label = layui.tinymce;
+        let $ = layui.jquery;
+        title.init({
+            selector: '#title',
+            placeholder: '请输入标题',
+            auto_focus: 'title',
+            toolbar: false,
+            menubar: false,
+            inline: true,
+            plugins: 'quickbars',
+            quickbars_insert_toolbar: 'bold italic forecolor | quicklink h2 h3 blockquote'
+        });
+        sub_title.init({
+            selector: '#sub_title',
+            placeholder: '请输入副标题',
+            toolbar: false,
+            menubar: false,
+            inline: true,
+            plugins: 'quickbars',
+            quickbars_insert_toolbar: 'bold italic forecolor | quicklink h2 h3 blockquote'
+        });
+        content.init({
+            selector: '#content',
+            placeholder: '请输入正文',
+            height: '500px',
+            branding: false,
+            images_upload_handler: function (blobInfo, success, failure) {
+                var form = new FormData();
+
+                // blobInfo.blob()为数据流
+
+                // blobInfo.filename()为文件名
+
+                //  根据自己的需求取值
+                form.append('file', blobInfo.blob(), blobInfo.filename());
+                $.ajax({
+                    url: '/uploadImg',
+                    type: "post",
+                    data: form,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        success(data.location); // 这里为图片上传成功之后所获取的图片路径赋值给下面的截图中的地址一栏
+                    },
+                    error: function (e) {
+                        alert("图片上传失败");
+                    }
+                });
+            }
+
+        });
+        label.init({
+            selector: '#label',
+            placeholder: '请输入标签',
+            inline: true,
+            content_css: 'css/mycss.css',
+            plugins: 'lists',
+            toolbar: 'bullist',
+            menubar: false,
+            inline: true,
+
+        });
+
+            if(getQueryVariable("id"))
+            $.ajax({
+                url:'article/searchArticle',
+                type: 'get',
+                dataType:'json',
+                data:{id:getQueryVariable("id")},
+                success:function (data) {
+                   $('#title').html(data.article.title);
+                    $('#sub_title').html(data.article.sub_title);
+                    $('#content').html(data.article.content);
+                    $('#label').html(data.article.label);
+                    $('#show-cover').attr("src",data.article.cover)
+                    $('#form').attr("action","/article/update");
+                    $('#form').attr("method","post");
+                    $('#article_id').attr("value",data.article.id);
+                }
+            })
+
+        $('#reset').click(function () {
+            window.location.reload("#");
+        });
+
+
+    });
+
+    function label() {
+            let param;
+            let content={};
+            let label=$('#label ul li');
+            for(var i=0;i<label.length;i++){
+                content[i]=label[i].text();
+                console.log(content[i]);
+
+            }
+
+            param.label=content;
+            $.ajax({
+                url:'label',
+                type:'get',
+                dataType: 'json',
+                data:param,
+                success:function (data) {
+                         ;
+                }
+            })
+           
+    }
+</script>
+
+</body>
+</html>

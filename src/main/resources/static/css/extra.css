@@ -1,0 +1,153 @@
+
+/*header*/
+.writeBlog{
+    top: 0;
+    right: 85px;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    margin-top: 16px;
+    padding: 13px 0px;
+    position: absolute;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 6px 2px rgb(0 0 0 / 14%);
+}
+.writeBlog:hover
+{
+    box-shadow: 0 0 6px 2px rgb(0 0 0 / 14%);
+
+}
+
+
+
+#pagination{margin-left: auto;margin-right: auto}
+#pagination select {
+    display: block
+}
+
+.userSwitch ul {
+    display: none;
+}
+
+.showUserSwitch ul {
+    display: block;
+}
+
+.sidebar-box {
+    padding: 30px 40px 40px 40px;
+    margin-bottom: 40px;
+}
+
+.bg-box {
+    background: #fff;
+    box-shadow: 0px 11px 9px 0px rgb(0 0 0 / 2%);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+h6{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.sidebar-tags {
+    height: 300px;
+}
+
+.sidebar-tags ul {
+    margin: 0 -4px;
+    list-style-type: none;
+}
+
+.sidebar-tags ul li {
+    cursor: pointer;
+    float: left;
+    padding: 0 4px;
+    margin-bottom: 8px;
+}
+
+.sidebar-tags ul li a {
+    line-height: 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #868686;
+    letter-spacing: 0.8px;
+    padding: 0 15px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-tags ul li a:hover {
+    border-style: solid;
+    border-color: #00a2d4;
+    background: #00a2d4;
+    color: white;
+}
+
+.sidebar-title {
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 0.8px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.sidebar-categories {
+    height: 500px;
+}
+
+
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    float: none;
+}
+
+#search-box{
+    border-bottom: none;
+    box-shadow: none;
+    color: black;
+
+}
+#search-box:hover{
+    /*outline: 1px #b1dcfb solid;*/
+    box-shadow: 0 0 6px 2px  rgb(177 220 251/ 50%);
+}
+.search-info{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.search-info h4{
+    color: #00a2d4;
+}
+.search-order,.search-class{
+    float: left;
+    margin-top: 20px;
+    text-align: center;
+
+}
+.sidebar-categories ul li{margin-bottom: 10px;width: 75%;}
+.search-order ul li,.search-class ul li,.sidebar-categories ul li,.area ul li{
+    margin-left: 10px;
+    color: #00a2d4;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 2px 1px rgb(0 0 0 / 14%);
+}
+.search-order ul li:hover,.search-class ul li:hover,.sidebar-categories ul li:hover,.area ul li:hover {
+    color: #fff;
+    background-color: #2962ff;
+    cursor: pointer;
+}
+
+
